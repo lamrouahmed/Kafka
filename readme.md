@@ -1,7 +1,8 @@
 ### The Rdfkafka module is written in c++, execute the following commands to install the c++ build-tools
 
 
-npm install --global windows-build-tools\n
+npm install --global windows-build-tools
+
 npm config set msvs_version 2017  
 
 
