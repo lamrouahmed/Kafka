@@ -25,3 +25,7 @@ npm install
 **Launch the Consumer** UV_THREADPOOL_SIZE=128 node ./consumer/index.js
 
 **Launch react app** cd /client => npm start
+
+**Open the app in the browser** localhost:3000
+
+**Open the stats app the browser** localhost:3000/stats
