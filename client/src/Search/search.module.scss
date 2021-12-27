@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "ddg";
+    src: url('../../public/fonts/ddg.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.formWrapper {
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0rem 0rem 5rem 0rem;
+}
+
+.formLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>img {
+        display: block;
+        height: 7rem;
+        width: 7rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.text {
+    font-size: 1.1em;
+    font-weight: normal;
+    display: block;
+    width: calc(100% - 4rem);
+    background: none;
+    outline: none;
+    border: none;
+    height: 2.545455em;
+    color: #FFF;
+}
+
+
+.form {
+    display: flex;
+    justify-content: end;
+    border-color: #333333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    background-color: #333333;
+
+}
+
+.submit {
+    background-color: #444444;
+    font-family: 'ddg', sans-serif;
+    border: none;
+    color: #cccccc;
+    width: 3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.autoCompleteList {
+    margin-top: 2px;
+    width: 100%;
+    background-color: inherit;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    background-color: #333333;
+    position: absolute;
+    top: 100%;
+
+    & > .autoCompleteItem {
+        height: 2.2rem;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        font-size: 1.1em;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(#333333, 5);
+        }
+    }
+}
+
+
+
+.Loading {
+    animation: rotation 600ms ease-in-out infinite ;
+};
+
+
+@keyframes rotation {
+    from { transform: rotate(0deg) };
+    to { transform: rotate(360deg)};  
+};

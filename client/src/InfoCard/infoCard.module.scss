@@ -1,0 +1,45 @@
+.cardContainer {
+    display: flex;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    background-color: #333333;
+    width: 15rem;
+    height: 6rem;
+    margin: .2rem;
+
+    .left, .right {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        color: #FFF;
+    }
+
+    .left {
+        flex-direction: column;
+        flex: 2;
+        justify-content: center;
+
+        & > div {
+            width: 80%;
+            margin: .2rem;
+        }
+
+        .title {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        .value {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    }
+
+    .right {
+        flex: 1;
+        justify-content: center;
+        .img {
+            display: block;
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+}
