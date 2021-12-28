@@ -9,18 +9,16 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 const data = {
-  labels: [],
+  labels: ["No Data"],
   datasets: [
     {
       label: "# of clicks",
-      data: [],
-      backgroundColor: [
-      ],
-      borderColor: [
-      ],
+      data: [1],
+      backgroundColor: ["#3d3e40cc"],
+      borderColor: ["#FFF"],
       borderWidth: 2,
-    }
-  ]
+    },
+  ],
 };
 
 
@@ -79,24 +77,30 @@ const colorArray = [
 ];
 
 const Stats = () => {
+    
     const [chartData, setChartData] = useState(data);
 
     setInterval(async () => {
       let stats = await axios.get("http://localhost:3003/getstats");
       let res = await stats.data;
+
+
       let deez = {};
-      res.forEach(data => { 
-          if (
-            isNaN(deez[data.country.name]) ||
-            deez[data.country.name] === undefined
-          )
-            deez[data.country.name] = 0;
-          deez[data.country.name]++;
+
+      if (data.labels.join("") === "No Data") {
+        data.labels = [];
+        data.datasets[0].backgroundColor = [];
+      }
+
+      res.forEach(d => { 
+          if (isNaN(deez[d.country.name]) || deez[d.country.name] === undefined ) deez[d.country.name] = 0;
+          deez[d.country.name]++;
       })
+
       data.labels = Object.keys(deez);
       data.datasets[0].data = Object.values(deez);
-      data.datasets[0].borderColor = ["#FFF"];
       data.datasets[0].backgroundColor = Array(data.labels.length).fill().map((e, i) => colorArray[i]);
+      //console.log(data);
       setChartData(data);
     }, 3000);
 

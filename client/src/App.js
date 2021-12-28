@@ -22,13 +22,11 @@ function App() {
       setCountries({ ...countries, population: data });
       setIsLoading(false);
     });
-
   }, []);
 
 
   const handleSubmit = e => {
     e.preventDefault();
-
     if(autoComplete.length === 1 && (countries.population.findIndex(c => c.country.toLowerCase() === country.toLowerCase()) !== -1)) {
       let { country } = autoComplete.pop();
       setIsDataLoaded(false);

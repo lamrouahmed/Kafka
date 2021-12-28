@@ -29,12 +29,14 @@ consumer.connect();
 let result = [];
 consumer
   .on("ready", () => {
-    console.log("consumer Running..");
+    console.log("Consumer Ready...")
     consumer.subscribe(["test"]);
     consumer.consume();
+
   })
   .on("data", function (data) {   
     result.push(JSON.parse(data.value.toString()));
+    console.log(JSON.parse(data.value.toString()));
   });
 
 
@@ -42,4 +44,4 @@ consumer
       res.send(result);    
   });
 
-app.listen(PORT, () => console.log("running"));
+app.listen(PORT, () => {});

@@ -8,7 +8,7 @@ const Search = ({onChange, onSearch, onClick, autoComplete, value, loaded}) => {
       <>
         <div className={styles.formWrapper}>
           <div className={styles.formLogo}>
-            <img src="./logo.png" alt="formLogo" className={!loaded && styles.Loading}/>
+            <img src="./logo.png" alt="formLogo" className={!loaded ? styles.Loading : 'f'}/>
           </div>
           <form onSubmit={onSearch} className={styles.form}>
             <input

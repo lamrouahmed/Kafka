@@ -37,7 +37,7 @@ app.listen(PORT, () => console.log('Producer Running'))
 
 const stream = Kafka.Producer.createWriteStream(
   {
-    "metadata.broker.list": "localhost:9092",
+    "metadata.broker.list": "localhost:9092"
   },
   {},
   {
